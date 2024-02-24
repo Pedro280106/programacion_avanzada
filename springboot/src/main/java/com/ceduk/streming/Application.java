@@ -1,13 +1,13 @@
-package com.ceduk.prueba;
+package com.ceduk.streming;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PruebaApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PruebaApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 }
