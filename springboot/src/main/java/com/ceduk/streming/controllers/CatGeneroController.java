@@ -28,7 +28,7 @@ public class CatGeneroController {
 
     @PutMapping("/generos/")
     public CatGenero putGenero(@RequestBody CatGenero genero){
-        return service.postGenero(genero);
+        return service.putGenero(genero);
     }
 
     @PostMapping("/generos/")

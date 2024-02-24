@@ -15,7 +15,7 @@ import java.io.Serializable;
 public class CtlMultimedia implements Serializable {
 
     @Id
-
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idu_multimedia")
     private Integer iduMultimedia;
 

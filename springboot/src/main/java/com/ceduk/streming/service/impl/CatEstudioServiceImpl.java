@@ -3,6 +3,7 @@ package com.ceduk.streming.service.impl;
 import com.ceduk.streming.entities.CatEstudio;
 import com.ceduk.streming.repositories.CatEstudioRepository;
 import com.ceduk.streming.service.CatEstudioService;
+import com.ceduk.streming.util.ValidarCampos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,9 @@ public class CatEstudioServiceImpl implements CatEstudioService {
 
     @Autowired
     private CatEstudioRepository repository;
+
+    @Autowired
+    private ValidarCampos validarCampos;
 
     @Override
     public List<CatEstudio> getEstudiosAll() {
@@ -40,8 +44,8 @@ public class CatEstudioServiceImpl implements CatEstudioService {
         Optional<CatEstudio> optionalCatEstudio = getEstudioById(estudio.getIduEstudio());
 
         if (optionalCatEstudio.isPresent()) {
-            CatEstudio catEstudio = optionalCatEstudio.get();
-            catEstudio.setNomEstudio(catEstudio.getNomEstudio());
+            CatEstudio catEstudio = validarCampos.actualizar(optionalCatEstudio.get(), estudio);
+
             return  repository.save(catEstudio);
         }
         return null;

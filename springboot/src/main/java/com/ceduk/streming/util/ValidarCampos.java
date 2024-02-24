@@ -9,7 +9,7 @@ public class ValidarCampos {
         if (objetoNuevo == null || objetoExistente == null) {
             return  null;
         }
-        Field[] campos = objetoExistente.getClass().getFields();
+        Field[] campos = objetoExistente.getClass().getDeclaredFields();
         for (Field campo : campos){
             try {
                 campo.setAccessible(true);
